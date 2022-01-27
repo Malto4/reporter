@@ -136,6 +136,13 @@ func (p Panel) IsSingleStat() bool {
 	return p.Is(SingleStat)
 }
 
+func (p Panel) IsOldTable() bool {
+	if p.Type == "table-old" {
+		return true
+	}
+	return false
+}
+
 func (p Panel) IsPartialWidth() bool {
 	return (p.GridPos.W < 24)
 }
