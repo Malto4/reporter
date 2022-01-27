@@ -181,9 +181,13 @@ func (g client) getPanelURL(p Panel, dashName string, t TimeRange) string {
 		} else if p.Is(Text) {
 			values.Add("width", "1000")
 			values.Add("height", "100")
+		} else if p.Is(table-old) {
+			values.Add("width", "1220")
+			values.Add("height", "800")
 		} else {
 			values.Add("width", "1000")
 			values.Add("height", "500")
+			log.Println("Else end ", p.Id)
 		}
 	}
 
@@ -194,7 +198,6 @@ func (g client) getPanelURL(p Panel, dashName string, t TimeRange) string {
 	}
 
 	url := g.getPanelEndpoint(dashName, values)
-	log.Println("Format is ", p, p.Id, url)
 	log.Println("Downloading image ", p.Id, url)
 	return url
 }
