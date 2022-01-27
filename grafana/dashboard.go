@@ -143,6 +143,13 @@ func (p Panel) IsOldTable() bool {
 	return false
 }
 
+func (p Panel) IsNewTable() bool {
+	if p.Type == "table" {
+		return true
+	}
+	return false
+}
+
 func (p Panel) IsPartialWidth() bool {
 	return (p.GridPos.W < 24)
 }
