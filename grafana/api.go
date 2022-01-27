@@ -183,11 +183,13 @@ func (g client) getPanelURL(p Panel, dashName string, t TimeRange) string {
 			values.Add("height", "100")
 		} else if p.IsOldTable() {
 			values.Add("width", "1220")
-			values.Add("height", "800")
+			values.Add("height", "1000")
+		} else if p.IsNewTable() {
+			values.Add("width", "1000")
+			values.Add("height", "750")
 		} else {
 			values.Add("width", "1000")
 			values.Add("height", "500")
-			log.Println("Else end ", p.Id, p.Type)
 		}
 	}
 
